@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        html{
+            background-color: whitesmoke;
+        }
+        .conatiner{
+            display: grid;
+            height: 50vh;
+            width: 100%;
+        }
+        .title{
+            display: flex;
+            grid-area: 2;
+            height: 10vh;
+            font-family: 'Kanit', sans-serif;
+            font-size: 2rem;
+            justify-content: center;
+            background-color: #0e1525;
+            color: #1beea1eb;
+        }
+        .header{
+            margin-bottom: 7rem;
+        }
+        .body-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .body-txt{
+            font-family: 'Kanit', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .word_input{
+            height: 8rem;
+            width: 65%;
+            border: 2px groove #1beea1eb;
+            border-radius: 10px;
+            background-color: white;
+            padding: 1rem;
+           }
+        button{
+            margin-top: 1.5rem;
+            height: 2rem;
+            width: 10rem;
+            background-color: #1beea1eb;
+            border: 0px groove #ffffffeb;
+            border-radius: 5px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 1.1rem;
+        }
+        .words{
+            margin-top: 1rem;
+            margin-bottom: 0rem;
+            font-size: 2rem;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="header">
+        <div class="container">
+            <div class="title">
+                <h1>Word Counter</h1>
+            </div>
+        </div>
+    </section>
+    <section class="body">
+        <div class="body-container">
+            <h2 class="body-txt">Enter the Words</h2>
+            <textarea class="word_input" name="text" id="" cols="30" rows="15"></textarea>
+            <h3 class="body-txt words"></h2>
+            <button>Count</button>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $("button").on("click", function (){
+            var words = $(".word_input").val().length;
+            console.log(words);
+            $(".words").text(`${words} Characters`)
+        })
+    </script>
+</body>
+</html>
